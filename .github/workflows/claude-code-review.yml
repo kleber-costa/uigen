@@ -40,6 +40,8 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
 
           model: "claude-sonnet-4-6"
+          claude_env: |
+            ANTHROPIC_MODEL: claude-sonnet-4-6
 
           # Direct prompt for automated review (no @claude mention needed)
           direct_prompt: |
