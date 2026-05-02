@@ -33,6 +33,11 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Configure Claude Code model
+        run: |
+          mkdir -p ~/.claude
+          echo '{"model":"claude-sonnet-4-6"}' > ~/.claude/settings.json
+
       - name: Run Claude Code Review
         id: claude-review
         uses: anthropics/claude-code-action@v1.0.111

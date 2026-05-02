@@ -37,6 +37,10 @@ jobs:
         run: |
           npm run setup
           npm run dev:daemon
+      - name: Configure Claude Code model
+        run: |
+          mkdir -p ~/.claude
+          echo '{"model":"claude-sonnet-4-6"}' > ~/.claude/settings.json
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1.0.111
